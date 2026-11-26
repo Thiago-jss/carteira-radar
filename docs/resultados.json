@@ -1,0 +1,624 @@
+{
+  "kind": "cvm_revised_history",
+  "window": {
+    "start": "2022-01",
+    "end": "2026-06"
+  },
+  "rows": 118010,
+  "observed_labels": 92034,
+  "source_archives": {
+    "inf_mensal_fidc_2022.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/HIST/inf_mensal_fidc_2022.zip",
+      "sha256": "29e4e6da90a1f1c5a29364da1bef69d05f968c6e747376d4b6a3a7b62d7e1415",
+      "bytes": 15592311
+    },
+    "inf_mensal_fidc_2023.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/HIST/inf_mensal_fidc_2023.zip",
+      "sha256": "739f40105b3341ff978c156a2ad9022ae826db73d596e3432d962729441090d6",
+      "bytes": 19776286
+    },
+    "inf_mensal_fidc_2024.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/HIST/inf_mensal_fidc_2024.zip",
+      "sha256": "d524616aa78532eddc0a8ac9072b0d15ca7f7fa377f2082b644dc3f0ea239862",
+      "bytes": 27064191
+    },
+    "inf_mensal_fidc_202501.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202501.zip",
+      "sha256": "97157708ccf20cc5c61a2f70d9e4d9919771c5179199e1a58cc91864a255abfe",
+      "bytes": 2628729
+    },
+    "inf_mensal_fidc_202502.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202502.zip",
+      "sha256": "a8aec7f93baf80a6b86cdaf9c8cf1eeea23d3315de274695f1f57e54e560e5e7",
+      "bytes": 2677862
+    },
+    "inf_mensal_fidc_202503.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202503.zip",
+      "sha256": "cdd70b60067c234a4aae6b4c2aa5a126138832709bbfb1d13149a0f7393b0a20",
+      "bytes": 2734608
+    },
+    "inf_mensal_fidc_202504.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202504.zip",
+      "sha256": "81f2233f2bb021d3a8e56ef703b7b15f16460b2578d2996dbd136898c9d14340",
+      "bytes": 2792528
+    },
+    "inf_mensal_fidc_202505.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202505.zip",
+      "sha256": "3c7170020aa5c3eaabf94bda5dbc6094eeb4174f1755b12f8bfa912b6b986c0f",
+      "bytes": 2858133
+    },
+    "inf_mensal_fidc_202506.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202506.zip",
+      "sha256": "d4758fbcfbf14c74edd6958e559bf66ac75930079add54bfc5c0a892f8b95616",
+      "bytes": 2942825
+    },
+    "inf_mensal_fidc_202507.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202507.zip",
+      "sha256": "82cdbb91ab2821f2f21f1c688a1e70b2184e7dcb1cd5340d6cfdb2b54d8bf1fb",
+      "bytes": 2991448
+    },
+    "inf_mensal_fidc_202508.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202508.zip",
+      "sha256": "960b752acade2bdabeb56269d91f1714a0a20fa2aa4f06592f838e9d211c440a",
+      "bytes": 3065747
+    },
+    "inf_mensal_fidc_202509.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202509.zip",
+      "sha256": "df2060c2c4fd20ee33919b4134f9ccb5ad564a0406c6a130b213bf7512462e05",
+      "bytes": 3086823
+    },
+    "inf_mensal_fidc_202510.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202510.zip",
+      "sha256": "5d38099ad4808bd569f7dbf677c366a37c9fd6248f3c80805562c4c08285caaf",
+      "bytes": 3136348
+    },
+    "inf_mensal_fidc_202511.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202511.zip",
+      "sha256": "8a30b55ccbc569ce8ebc5a7bebe83ed09d046f8261c2775f80a8faf6b4bd9263",
+      "bytes": 3169984
+    },
+    "inf_mensal_fidc_202512.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202512.zip",
+      "sha256": "fa149b7d8ac5f976fa31c51168c601344bfcdefc57a7c4b9720eee26db550178",
+      "bytes": 3273809
+    },
+    "inf_mensal_fidc_202601.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202601.zip",
+      "sha256": "303e87a1b99cdd465b3299a9f2b939069a89f9c08a62ed89a995b3fafce6798a",
+      "bytes": 3256312
+    },
+    "inf_mensal_fidc_202602.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202602.zip",
+      "sha256": "3c764b958a1dcb03c8678615757493e450e3a146e72edb90ddf3ed1937fae171",
+      "bytes": 3285005
+    },
+    "inf_mensal_fidc_202603.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202603.zip",
+      "sha256": "60fbbe868be1b71ebbf7979f35f60f1bd93812523848056c4ea878134aa17092",
+      "bytes": 3341656
+    },
+    "inf_mensal_fidc_202604.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202604.zip",
+      "sha256": "dfaebaf931680a638608ba6556e86847b34ce24a6bee3c74e2397a40e6285845",
+      "bytes": 3397518
+    },
+    "inf_mensal_fidc_202605.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202605.zip",
+      "sha256": "36437299a94fb1646dace021c67837cb3cdb0025433e139afab150515fbc93d6",
+      "bytes": 3434978
+    },
+    "inf_mensal_fidc_202606.zip": {
+      "url": "https://dados.cvm.gov.br/dados/FIDC/DOC/INF_MENSAL/DADOS/inf_mensal_fidc_202606.zip",
+      "sha256": "09e63aacd9d2eaf3ec534c4f9c225f14042b558ed77d0f364d7ed025028a14e2",
+      "bytes": 3507040
+    }
+  },
+  "retrospective_rows": 18030,
+  "latest_rows": 3253,
+  "latest_unscored": 265,
+  "report": {
+    "protocol": "frozen-temporal-v2",
+    "status": "ok",
+    "selected": "xgboost",
+    "selected_model": "xgboost",
+    "selection_rule": "Maximum validation AP among probabilistic candidates; logistic wins ties",
+    "as_of": "2026-06",
+    "features": [
+      "ratio",
+      "lag_1",
+      "lag_3",
+      "delta_3",
+      "log_balance"
+    ],
+    "versions": {
+      "python": "3.11.15",
+      "pandas": "2.3.3",
+      "numpy": "2.4.6",
+      "sklearn": "1.9.1",
+      "xgboost": "3.2.0"
+    },
+    "tracking": {
+      "status": "disabled"
+    },
+    "splits": {
+      "train": {
+        "start": "2022-01",
+        "end": "2024-09",
+        "months": [
+          "2022-01",
+          "2022-02",
+          "2022-03",
+          "2022-04",
+          "2022-05",
+          "2022-06",
+          "2022-07",
+          "2022-08",
+          "2022-09",
+          "2022-10",
+          "2022-11",
+          "2022-12",
+          "2023-01",
+          "2023-02",
+          "2023-03",
+          "2023-04",
+          "2023-05",
+          "2023-06",
+          "2023-07",
+          "2023-08",
+          "2023-09",
+          "2023-10",
+          "2023-11",
+          "2023-12",
+          "2024-01",
+          "2024-02",
+          "2024-03",
+          "2024-04",
+          "2024-05",
+          "2024-06",
+          "2024-07",
+          "2024-08",
+          "2024-09"
+        ],
+        "rows": 58594,
+        "labeled_complete_rows": 44519,
+        "last_label_month": "2024-12"
+      },
+      "validation": {
+        "start": "2025-01",
+        "end": "2025-06",
+        "months": [
+          "2025-01",
+          "2025-02",
+          "2025-03",
+          "2025-04",
+          "2025-05",
+          "2025-06"
+        ],
+        "rows": 15842,
+        "labeled_complete_rows": 12656,
+        "last_label_month": "2025-09"
+      },
+      "test": {
+        "start": "2025-10",
+        "end": "2026-03",
+        "months": [
+          "2025-10",
+          "2025-11",
+          "2025-12",
+          "2026-01",
+          "2026-02",
+          "2026-03"
+        ],
+        "rows": 18030,
+        "labeled_complete_rows": 8578,
+        "last_label_month": "2026-06"
+      }
+    },
+    "models": {
+      "momentum": {
+        "parameters": {
+          "score": "delta_3"
+        },
+        "probability": false,
+        "validation": {
+          "n": 12656,
+          "positives": 1433,
+          "average_precision": 0.34482743951159417,
+          "brier": null,
+          "precision_at_10pct": 0.4981844687865779,
+          "recall_at_10pct": 0.4475186520671621,
+          "by_month": [
+            {
+              "month": "2025-01",
+              "n": 1431,
+              "k": 144,
+              "positives": 133,
+              "precision": 0.4097222222222222,
+              "recall": 0.44360902255639095
+            },
+            {
+              "month": "2025-02",
+              "n": 1708,
+              "k": 171,
+              "positives": 183,
+              "precision": 0.4853801169590643,
+              "recall": 0.453551912568306
+            },
+            {
+              "month": "2025-03",
+              "n": 2334,
+              "k": 234,
+              "positives": 258,
+              "precision": 0.49572649572649574,
+              "recall": 0.4496124031007752
+            },
+            {
+              "month": "2025-04",
+              "n": 2387,
+              "k": 239,
+              "positives": 275,
+              "precision": 0.5271966527196653,
+              "recall": 0.4581818181818182
+            },
+            {
+              "month": "2025-05",
+              "n": 2417,
+              "k": 242,
+              "positives": 286,
+              "precision": 0.5206611570247934,
+              "recall": 0.4405594405594406
+            },
+            {
+              "month": "2025-06",
+              "n": 2379,
+              "k": 238,
+              "positives": 298,
+              "precision": 0.5504201680672269,
+              "recall": 0.4395973154362416
+            }
+          ]
+        },
+        "test": {
+          "n": 8578,
+          "positives": 1302,
+          "average_precision": 0.3028665805531137,
+          "brier": null,
+          "precision_at_10pct": 0.46584753648662014,
+          "recall_at_10pct": 0.3050344770797443,
+          "by_month": [
+            {
+              "month": "2025-10",
+              "n": 1973,
+              "k": 198,
+              "positives": 244,
+              "precision": 0.43434343434343436,
+              "recall": 0.3524590163934426
+            },
+            {
+              "month": "2025-11",
+              "n": 1183,
+              "k": 119,
+              "positives": 174,
+              "precision": 0.4789915966386555,
+              "recall": 0.3275862068965517
+            },
+            {
+              "month": "2025-12",
+              "n": 1099,
+              "k": 110,
+              "positives": 195,
+              "precision": 0.4818181818181818,
+              "recall": 0.2717948717948718
+            },
+            {
+              "month": "2026-01",
+              "n": 1464,
+              "k": 147,
+              "positives": 227,
+              "precision": 0.40816326530612246,
+              "recall": 0.2643171806167401
+            },
+            {
+              "month": "2026-02",
+              "n": 1298,
+              "k": 130,
+              "positives": 220,
+              "precision": 0.5076923076923077,
+              "recall": 0.3
+            },
+            {
+              "month": "2026-03",
+              "n": 1561,
+              "k": 157,
+              "positives": 242,
+              "precision": 0.4840764331210191,
+              "recall": 0.3140495867768595
+            }
+          ]
+        }
+      },
+      "logistic": {
+        "parameters": {
+          "C": 1.0,
+          "solver": "lbfgs",
+          "max_iter": 1000,
+          "random_state": 42
+        },
+        "probability": true,
+        "validation": {
+          "n": 12656,
+          "positives": 1433,
+          "average_precision": 0.21909856353023785,
+          "brier": 0.09897553047577165,
+          "precision_at_10pct": 0.3086626435379905,
+          "recall_at_10pct": 0.2784531760343713,
+          "by_month": [
+            {
+              "month": "2025-01",
+              "n": 1431,
+              "k": 144,
+              "positives": 133,
+              "precision": 0.2847222222222222,
+              "recall": 0.3082706766917293
+            },
+            {
+              "month": "2025-02",
+              "n": 1708,
+              "k": 171,
+              "positives": 183,
+              "precision": 0.30409356725146197,
+              "recall": 0.28415300546448086
+            },
+            {
+              "month": "2025-03",
+              "n": 2334,
+              "k": 234,
+              "positives": 258,
+              "precision": 0.3076923076923077,
+              "recall": 0.27906976744186046
+            },
+            {
+              "month": "2025-04",
+              "n": 2387,
+              "k": 239,
+              "positives": 275,
+              "precision": 0.2928870292887029,
+              "recall": 0.2545454545454545
+            },
+            {
+              "month": "2025-05",
+              "n": 2417,
+              "k": 242,
+              "positives": 286,
+              "precision": 0.32644628099173556,
+              "recall": 0.2762237762237762
+            },
+            {
+              "month": "2025-06",
+              "n": 2379,
+              "k": 238,
+              "positives": 298,
+              "precision": 0.33613445378151263,
+              "recall": 0.2684563758389262
+            }
+          ]
+        },
+        "test": {
+          "n": 8578,
+          "positives": 1302,
+          "average_precision": 0.21975309151222625,
+          "brier": 0.12925956463081084,
+          "precision_at_10pct": 0.25929262623048416,
+          "recall_at_10pct": 0.17027763222754588,
+          "by_month": [
+            {
+              "month": "2025-10",
+              "n": 1973,
+              "k": 198,
+              "positives": 244,
+              "precision": 0.2727272727272727,
+              "recall": 0.22131147540983606
+            },
+            {
+              "month": "2025-11",
+              "n": 1183,
+              "k": 119,
+              "positives": 174,
+              "precision": 0.24369747899159663,
+              "recall": 0.16666666666666666
+            },
+            {
+              "month": "2025-12",
+              "n": 1099,
+              "k": 110,
+              "positives": 195,
+              "precision": 0.2818181818181818,
+              "recall": 0.15897435897435896
+            },
+            {
+              "month": "2026-01",
+              "n": 1464,
+              "k": 147,
+              "positives": 227,
+              "precision": 0.22448979591836735,
+              "recall": 0.14537444933920704
+            },
+            {
+              "month": "2026-02",
+              "n": 1298,
+              "k": 130,
+              "positives": 220,
+              "precision": 0.2846153846153846,
+              "recall": 0.16818181818181818
+            },
+            {
+              "month": "2026-03",
+              "n": 1561,
+              "k": 157,
+              "positives": 242,
+              "precision": 0.2484076433121019,
+              "recall": 0.16115702479338842
+            }
+          ]
+        }
+      },
+      "xgboost": {
+        "parameters": {
+          "n_estimators": 120,
+          "max_depth": 3,
+          "learning_rate": 0.05,
+          "min_child_weight": 3,
+          "subsample": 1.0,
+          "colsample_bytree": 1.0,
+          "reg_lambda": 1.0,
+          "objective": "binary:logistic",
+          "eval_metric": "logloss",
+          "tree_method": "hist",
+          "n_jobs": 1,
+          "random_state": 42
+        },
+        "probability": true,
+        "validation": {
+          "n": 12656,
+          "positives": 1433,
+          "average_precision": 0.4796447715020453,
+          "brier": 0.07455074042081833,
+          "precision_at_10pct": 0.5089537723803496,
+          "recall_at_10pct": 0.45800566485928956,
+          "by_month": [
+            {
+              "month": "2025-01",
+              "n": 1431,
+              "k": 144,
+              "positives": 133,
+              "precision": 0.4375,
+              "recall": 0.47368421052631576
+            },
+            {
+              "month": "2025-02",
+              "n": 1708,
+              "k": 171,
+              "positives": 183,
+              "precision": 0.49707602339181284,
+              "recall": 0.4644808743169399
+            },
+            {
+              "month": "2025-03",
+              "n": 2334,
+              "k": 234,
+              "positives": 258,
+              "precision": 0.5,
+              "recall": 0.45348837209302323
+            },
+            {
+              "month": "2025-04",
+              "n": 2387,
+              "k": 239,
+              "positives": 275,
+              "precision": 0.5439330543933054,
+              "recall": 0.4727272727272727
+            },
+            {
+              "month": "2025-05",
+              "n": 2417,
+              "k": 242,
+              "positives": 286,
+              "precision": 0.5247933884297521,
+              "recall": 0.44405594405594406
+            },
+            {
+              "month": "2025-06",
+              "n": 2379,
+              "k": 238,
+              "positives": 298,
+              "precision": 0.5504201680672269,
+              "recall": 0.4395973154362416
+            }
+          ]
+        },
+        "test": {
+          "n": 8578,
+          "positives": 1302,
+          "average_precision": 0.4108506155825164,
+          "brier": 0.10642526298761368,
+          "precision_at_10pct": 0.4913795881761412,
+          "recall_at_10pct": 0.32140929095553333,
+          "by_month": [
+            {
+              "month": "2025-10",
+              "n": 1973,
+              "k": 198,
+              "positives": 244,
+              "precision": 0.4444444444444444,
+              "recall": 0.36065573770491804
+            },
+            {
+              "month": "2025-11",
+              "n": 1183,
+              "k": 119,
+              "positives": 174,
+              "precision": 0.48739495798319327,
+              "recall": 0.3333333333333333
+            },
+            {
+              "month": "2025-12",
+              "n": 1099,
+              "k": 110,
+              "positives": 195,
+              "precision": 0.4909090909090909,
+              "recall": 0.27692307692307694
+            },
+            {
+              "month": "2026-01",
+              "n": 1464,
+              "k": 147,
+              "positives": 227,
+              "precision": 0.47619047619047616,
+              "recall": 0.30837004405286345
+            },
+            {
+              "month": "2026-02",
+              "n": 1298,
+              "k": 130,
+              "positives": 220,
+              "precision": 0.5461538461538461,
+              "recall": 0.32272727272727275
+            },
+            {
+              "month": "2026-03",
+              "n": 1561,
+              "k": 157,
+              "positives": 242,
+              "precision": 0.5031847133757962,
+              "recall": 0.32644628099173556
+            }
+          ]
+        }
+      }
+    },
+    "comparisons": {
+      "validation": {
+        "selected_ap_minus_momentum": 0.13481733199045115,
+        "models_above_momentum_ap": [
+          "xgboost"
+        ],
+        "conclusion": "At least one candidate beats momentum on AP"
+      },
+      "test": {
+        "selected_ap_minus_momentum": 0.10798403502940268,
+        "models_above_momentum_ap": [
+          "xgboost"
+        ],
+        "conclusion": "At least one candidate beats momentum on AP"
+      }
+    },
+    "reason": null,
+    "model_id": "0261842172dc66ab94435022f650c5a0e3a5657d06006cdf0465a25ad2f23685"
+  },
+  "snapshot_checksums": {
+    "features.parquet": "7aaad30bc48b075c0bccc321ac6fa3339618971ebd5f31e8252b8f82053c8229",
+    "benchmark.json": "ee78acc9684fed1587bd563206f7781646ce9037d9fe98434456316101e5a228",
+    "predictions.json": "b77396fe2cc06011efab6870e18c0848f3b485215f0f3ccb53b7ecc9908a59cb"
+  },
+  "mlflow_metric_count": 22
+}
