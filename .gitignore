@@ -9,6 +9,7 @@
 /mlartifacts/
 *.db
 *.sqlite*
+/home/
 *.parquet
 *.zip
 *.pkl

@@ -1,0 +1,20 @@
+name: carteira-radar
+services:
+  dashboard:
+    image: carteira-radar:local
+    build: .
+    ports: ['127.0.0.1:8084:8084']
+    volumes:
+      - type: bind
+        source: ${RADAR_SNAPSHOT_DIR:-./artifacts}
+        target: /app/artifacts
+        read_only: true
+        bind: {create_host_path: false}
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
+    healthcheck:
+      test: [CMD, python, -c, "from urllib.request import urlopen; urlopen('http://127.0.0.1:8084/health/ready', timeout=3).close()"]
+      interval: 3s
+      timeout: 4s
+      retries: 15
