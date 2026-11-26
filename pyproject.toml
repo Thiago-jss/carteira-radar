@@ -1,0 +1,29 @@
+[project]
+name = "carteira-radar"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "pandas>=2.2,<3",
+  "numpy>=2,<3",
+  "scikit-learn>=1.6,<2",
+  "xgboost-cpu>=3,<4; platform_system == 'Linux' and platform_machine == 'x86_64'",
+  "xgboost>=3,<4; platform_system != 'Linux' or platform_machine != 'x86_64'",
+  "pyarrow>=20,<24",
+  "duckdb>=1.2,<2",
+  "mlflow-skinny>=3,<4",
+  "sqlalchemy>=2,<3",
+  "alembic>=1.14,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx2>=2,<3", "ruff>=0.11,<1"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

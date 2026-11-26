@@ -9,6 +9,8 @@ mlartifacts
 **/node_modules
 **/dist
 **/.angular
+**/.npm-cache
+home
 **/__pycache__
 .pytest_cache
 .ruff_cache
