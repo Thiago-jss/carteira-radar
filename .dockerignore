@@ -1,0 +1,14 @@
+.git
+.venv
+.env
+.env.*
+data
+artifacts
+mlruns
+mlartifacts
+**/node_modules
+**/dist
+**/.angular
+**/__pycache__
+.pytest_cache
+.ruff_cache
