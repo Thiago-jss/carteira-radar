@@ -1,0 +1,92 @@
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="top"><div class="shell top-inner"><div class="brand"><span class="mark" aria-hidden="true">◎</span> Carteira<span class="brand-accent">Radar</span></div><span class="mode">Somente leitura</span></div></header>
+<main id="conteudo" class="shell" tabindex="-1">
+  <section class="hero" aria-labelledby="title">
+    <p class="eyebrow">Monitoramento de carteira</p>
+    <h1 id="title">Painel de risco</h1>
+    @if (benchmark()?.provenance?.kind === 'synthetic') {<p class="eyebrow">Demonstração com dados fictícios</p>} @else {<p class="eyebrow">Pesquisa retrospectiva · CVM</p>}
+    <p>Consulte sinais por competência e investigue o histórico de cada entidade.</p>
+  </section>
+  <section aria-labelledby="coorte">
+    <div class="section-head"><div><p class="eyebrow">01 / Visão mensal</p><h2 id="coorte">Coorte e cobertura</h2></div>
+      <label class="picker">Competência <select #picker [value]="month()" [disabled]="!months().length" (change)="load(picker.value)">
+        @if (!month()) {<option value="">—</option>}
+        @for (option of months(); track option) {<option [value]="option" [selected]="option === month()">{{monthLabel(option)}}</option>}
+      </select></label>
+    </div>
+    @if (loading()) {<p role="status" class="message">Carregando a coorte…</p>}
+    @else if (error()) {<div class="message" role="alert">Não foi possível carregar a coorte. <button type="button" (click)="load()">Tentar novamente</button></div>}
+    @else if (cohort(); as data) {
+      <div class="metrics">
+        <div><h3>Entidades na coorte</h3><strong>{{data.total}}</strong><small>Competência {{monthLabel(data.month)}}</small></div>
+        <div><h3>Com escore na listagem</h3><strong>{{scored()}} <span>/ {{rows().length}}</span></strong><small>{{rows().length - scored()}} sem escore entre as exibidas</small></div>
+        <div><h3>Cobertura da coorte</h3><strong>{{percent(cohortCoverage())}}</strong><small>{{data.total === 0 ? 'Coorte sem entidades' : cohortCoverage() === null ? 'Indisponível com listagem parcial' : 'Entidades com escore ÷ total da coorte'}}</small></div>
+      </div>
+      <p class="cohort-note">{{rows()[0]?.cohort === 'latest_in_snapshot' ? 'Última competência da base: desfecho ainda não observado.' : 'Teste histórico: o desfecho aparece apenas quando observado.'}}</p>
+      <div class="panel list">
+        <div class="panel-head"><h3>Entidades monitoradas</h3><p>Exibindo {{data.offset + 1}}–{{data.offset + rows().length}} de {{data.total}} · Selecione uma entidade para consultar o histórico.</p></div>
+        @if (rows().length) {
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Entidades monitoradas">
+          <table><caption class="sr">Sinais e resultados retrospectivos por entidade</caption><thead><tr><th scope="col">Entidade</th><th scope="col">Situação</th><th scope="col">Probabilidade estimada</th><th scope="col">Razão</th><th scope="col">Variação em 3 meses</th><th scope="col">Rótulo retrospectivo</th><th scope="col">Razão observada depois</th></tr></thead><tbody>
+          @for (row of rows(); track row.entity_id) {
+            <tr><th scope="row"><button class="entity" type="button" (click)="open(row, detail, $event)">{{row.name || row.entity_id}}</button><small>{{row.entity_id}}</small></th><td><span class="badge" [class.pending]="row.status === 'unscored'">{{row.status === 'scored' ? 'Com escore' : 'Sem escore'}}</span>@if (row.status === 'unscored') {<small>{{reason(row.reason)}}</small>}</td><td class="estimate">{{row.status === 'scored' ? percent(row.probability) : '—'}}</td><td>{{percent(row.ratio)}}</td><td>{{delta(row.delta_3)}}</td><td>{{row.label ?? '—'}}</td><td>{{percent(row.outcome_ratio)}}</td></tr>
+          }
+          </tbody></table></div>
+          <nav class="pager" aria-label="Paginação de entidades">
+            <button type="button" [disabled]="data.offset === 0" (click)="load(data.month, data.offset - pageSize)">Anterior</button>
+            <button type="button" [disabled]="data.offset + rows().length >= data.total" (click)="load(data.month, data.offset + pageSize)">Próxima</button>
+          </nav>
+        } @else {<p class="message">Nenhuma entidade disponível nesta competência.</p>}
+      </div>
+    }
+  </section>
+  <section class="model" aria-labelledby="modelo">
+    <p class="eyebrow">02 / Metodologia</p><h2 id="modelo">Modelo e avaliação</h2>
+    <div class="panel model-body">
+      @switch (benchmarkState()) {
+        @case ('loading') {<p role="status">Carregando informações do modelo…</p>}
+        @case ('error') {<p role="alert">Informações do modelo indisponíveis. <button type="button" (click)="loadBenchmark()">Tentar novamente</button></p>}
+        @case ('ready') { @if (benchmark(); as data) {
+          <p>Modelo selecionado: <strong>{{data.selected_model || 'Não informado'}}</strong></p>
+          @if (modelRows().length) {
+            <div class="table-wrap"><table aria-label="Comparação no teste histórico"><thead><tr><th scope="col">Método</th><th scope="col">AP</th><th scope="col">Precisão no top 10%</th><th scope="col">Brier ↓</th></tr></thead><tbody>
+            @for (item of modelRows(); track item[0]) {
+              <tr><th scope="row">{{item[0]}}</th><td>{{percent(item[1].test?.average_precision ?? null)}}</td><td>{{percent(item[1].test?.precision_at_10pct ?? null)}}</td><td>{{item[1].test?.brier?.toFixed(3) ?? '—'}}</td></tr>
+            }
+            </tbody></table></div>
+          }
+          @if (data.models != null) {<details><summary>Resultados dos modelos</summary><pre>{{evidence(data.models)}}</pre></details>}
+          @if (data.splits != null) {<details><summary>Partições de avaliação</summary><pre>{{evidence(data.splits)}}</pre></details>}
+        }}
+      }
+      <p>A probabilidade é uma estimativa do modelo, não um resultado observado. O rótulo e a razão observada depois servem apenas à avaliação retrospectiva; podem ainda não estar disponíveis. O símbolo — indica um valor indisponível.</p>
+      <p>Ferramenta de apoio ao monitoramento de risco. Não constitui recomendação de investimento nem substitui análise humana.</p>
+    </div>
+  </section>
+</main>
+<footer class="shell">Carteira Radar <span>·</span> Operações de risco</footer>
+<dialog #detail aria-label="Histórico da entidade" (close)="close()">
+  <div class="dialog-head"><div><p class="eyebrow">Histórico da entidade</p><h2>{{selected()?.name || selected()?.entity_id}}</h2></div><button type="button" autofocus (click)="detail.close()">Fechar</button></div>
+  @if (selected(); as row) {
+    <p class="entity-id">Identificador: {{row.entity_id}}</p>
+    @if (factors().length) {
+      <section class="factors" aria-label="Contribuições do modelo"><h3>O que pesou no escore</h3>
+        <p>Contribuições em log-odds para a competência selecionada. Não indicam causalidade.</p>
+        <dl>@for (factor of factors(); track factor.name) {<div><dt>{{factor.name}}</dt><dd>{{signed(factor.value)}}</dd></div>}</dl>
+      </section>
+    }
+    @switch (historyState()) {
+      @case ('loading') {<p role="status" class="message">Carregando histórico…</p>}
+      @case ('error') {<div role="alert" class="message">Não foi possível carregar o histórico. <button (click)="loadHistory(row.entity_id)">Tentar novamente</button></div>}
+      @case ('ready') {
+        @if (history().length) {
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Série histórica"><table><caption class="sr">Série histórica de sinais e resultados observados</caption><thead><tr><th scope="col">Competência</th><th scope="col">Situação</th><th scope="col">Probabilidade estimada</th><th scope="col">Razão</th><th scope="col">Variação em 3 meses</th><th scope="col">Rótulo retrospectivo</th><th scope="col">Razão observada depois</th></tr></thead><tbody>
+          @for (entry of history(); track entry.month) {
+            <tr><th scope="row">{{monthLabel(entry.month)}}</th><td>{{entry.status === 'scored' ? 'Com escore' : 'Sem escore'}}@if (entry.status === 'unscored') {<small>{{reason(entry.reason)}}</small>}</td><td class="estimate">{{entry.status === 'scored' ? percent(entry.probability) : '—'}}</td><td>{{percent(entry.ratio)}}</td><td>{{delta(entry.delta_3)}}</td><td>{{entry.label ?? '—'}}</td><td>{{percent(entry.outcome_ratio)}}</td></tr>
+          }
+          </tbody></table></div>
+        } @else {<p class="message">Não há histórico disponível.</p>}
+      }
+    }
+  }
+</dialog>
